@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://clashnyanpasugithub.github.io/news/article-34830.htm" />
@@ -9,10 +9,38 @@
     <title>网络协议之:socket协议详解之Unix domain Socket</title>
         <meta name="description" content="目录  简介 什么是Unix domain Socket 使用socat来创建Unix Domain Sockets 使用ss命令来查看Unix domain Socket 使用nc连接到Unix d" />
         <link rel="icon" href="/assets/website/img/clashnyanpasugithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Nyanpasu Github机场节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnyanpasugithub.github.io/news/article-34830.htm" />
+    <meta property="og:site_name" content="Clash Nyanpasu Github机场节点官网" />
+    <meta property="og:title" content="网络协议之:socket协议详解之Unix domain Socket" />
+    <meta property="og:image" content="https://clashnyanpasugithub.github.io/uploads/20240820-1/60660919c6a878dad14067465a0ce0cb.webp" />
+        <meta property="og:release_date" content="2025-01-02T10:00:07" />
+    <meta property="og:updated_time" content="2025-01-02T10:00:07" />
+        <meta property="og:description" content="目录  简介 什么是Unix domain Socket 使用socat来创建Unix Domain Sockets 使用ss命令来查看Unix domain Socket 使用nc连接到Unix d" />
+        
     <!-- Template CSS -->
     <link rel="stylesheet" href="/assets/website/css/clashnyanpasugithub/style-starter.css">
     <!-- web fonts -->
     <link href="//fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="网络协议之:socket协议详解之Unix domain Socket">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1C52JTEWP"></script>
 <script>
@@ -92,16 +120,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-22-clash-nyanpasu.htm" title="「12月22日」最高速度20.2M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐">「12月22日」最高速度20.2M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-24936.htm" title="java list在哪个包_Java 中初始化 List 集合的 N 种方式！">java list在哪个包_Java 中初始化 List 集合的 N 种方式！</a></li>
-                        <li class="py-2"><a href="/news/article-21252.htm" title="Jpa框架下拼接原生sql 并执行">Jpa框架下拼接原生sql 并执行</a></li>
-                        <li class="py-2"><a href="/news/article-31018.htm" title="动物医院评价怎么写（动物医院的）">动物医院评价怎么写（动物医院的）</a></li>
-                        <li class="py-2"><a href="/news/article-21253.htm" title="被猫抓了一下出了点血可以不***吗（被猫抓了一下出了点血可以不***吗多少钱）">被猫抓了一下出了点血可以不***吗（被猫抓了一下出了点血可以不***吗多少钱）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe.htm" title="「11月26日」最高速度21.7M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐">「11月26日」最高速度21.7M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-30014.htm" title="南京无偿领养宠物猫吧 南京无偿领养宠物猫吧最新消息">南京无偿领养宠物猫吧 南京无偿领养宠物猫吧最新消息</a></li>
-                        <li class="py-2"><a href="/news/article-28648.htm" title="免费领养狗狗正规网站平台有哪些软件可以下载（免费领养狗狗app）">免费领养狗狗正规网站平台有哪些软件可以下载（免费领养狗狗app）</a></li>
-                        <li class="py-2"><a href="/news/article-23560.htm" title="猫咪疫苗三针要隔多少天（猫咪的三针疫苗间隔多久）">猫咪疫苗三针要隔多少天（猫咪的三针疫苗间隔多久）</a></li>
-                        <li class="py-2"><a href="/news/article-24938.htm" title="宠物粮食成本价格 宠物粮食成本价格表">宠物粮食成本价格 宠物粮食成本价格表</a></li>
+                        <li class="py-2"><a href="/news/article-24411.htm" title="开动物医院需要什么资质（开动物诊疗所需要哪些条件）">开动物医院需要什么资质（开动物诊疗所需要哪些条件）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-free-node-subscribe-links.htm" title="「11月9日」最高速度18.7M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐">「11月9日」最高速度18.7M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-50127.htm" title="免费领养狗狗正规网站平台有哪些软件呢（免费领养狗狗app）">免费领养狗狗正规网站平台有哪些软件呢（免费领养狗狗app）</a></li>
+                        <li class="py-2"><a href="/news/article-38702.htm" title="宠物粮行业分析报告怎么写好（宠物粮行业分析报告怎么写好看）">宠物粮行业分析报告怎么写好（宠物粮行业分析报告怎么写好看）</a></li>
+                        <li class="py-2"><a href="/news/article-28646.htm" title="Python项目：学生信息管理系统（完整版）">Python项目：学生信息管理系统（完整版）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-free-clash-nyanpasu.htm" title="「12月31日」最高速度21.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「12月31日」最高速度21.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-45641.htm" title="想开宠物店（想开宠物店因为）">想开宠物店（想开宠物店因为）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-clash-nyanpasu-node.htm" title="「12月11日」最高速度19.8M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐">「12月11日」最高速度19.8M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-42175.htm" title="动物疫苗接种间隔多久打一次（动物疫苗多长时间打一次）">动物疫苗接种间隔多久打一次（动物疫苗多长时间打一次）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-clash-nyanpasu-node.htm" title="「11月19日」最高速度18.2M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐">「11月19日」最高速度18.2M/S，2024年Clash Nyanpasu Github免费机场订阅节点链接，2024翻墙机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -113,16 +141,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
