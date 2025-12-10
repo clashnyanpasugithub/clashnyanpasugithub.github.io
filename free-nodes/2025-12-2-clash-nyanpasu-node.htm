@@ -366,9 +366,9 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
         Sing-box 的配置使用 JSON 格式，而 Clash 采用 YAML 格式。前者更适合程序自动解析，后者更便于人工编辑。Sing-box 在性能和扩展性上有明显优势，支持更细粒度的流量控制。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 的配置文件在哪里保存？</h5></div>
+    <div class="panel-heading"><h5>Clash 的节点健康检测如何工作？</h5></div>
     <div class="panel-body">
-        Nekoray 的配置文件默认保存在程序目录下的 `config.json` 中。用户可手动备份此文件以迁移配置，也可使用导入导出功能在不同设备间同步节点数据。<hr />    </div>
+        Clash 会定期对每个节点进行延迟和丢包率测试，并根据结果标记节点健康状态。结合策略组，可以自动切换到最优节点，避免访问高延迟或失效节点，提高整体网络稳定性和效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 的 QUIC 传输在高丢包环境下表现如何？</h5></div>
@@ -376,14 +376,9 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
         QUIC 基于 UDP，具备拥塞控制和重传机制，在高丢包环境下仍能保持稳定连接。Hysteria2 利用 QUIC 特性，使流量高效传输，延迟低且稳定性好。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 是否支持多出口自动选择？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 策略组如何提升游戏和视频体验？</h5></div>
     <div class="panel-body">
-        支持。通过配置路由规则和策略组，Sing-box 可以自动判断流量类型并选择最佳出口，实现智能分流和多节点负载均衡，提高访问效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的节点健康检测如何工作？</h5></div>
-    <div class="panel-body">
-        Clash 会定期对每个节点进行延迟和丢包率测试，并根据结果标记节点健康状态。结合策略组，可以自动切换到最优节点，避免访问高延迟或失效节点，提高整体网络稳定性和效率。<hr />    </div>
+        通过策略组将游戏、视频和浏览器流量分配到低延迟、高带宽节点，Surfboard 可自动切换最优节点，减少延迟和卡顿，提高整体网络体验和访问速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 支持哪几种代理协议？</h5></div>
@@ -391,24 +386,29 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
         Shadowrocket 支持多种协议，包括 Shadowsocks、Vmess、VLess、Trojan、HTTP、SOCKS5 等。它还可解析部分 QuantumultX 与 Clash 的订阅格式，适合 iOS 用户进行全协议代理管理与切换。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 支持哪些协议？</h5></div>
-    <div class="panel-body">
-        Clash 支持多种主流代理协议，包括 VMess、VLess、Trojan、Shadowsocks、Snell、Socks5 等。通过配置文件或订阅源，用户可以灵活组合不同协议的节点，实现复杂的分流策略与优先级控制。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 策略组如何提升游戏和视频体验？</h5></div>
-    <div class="panel-body">
-        通过策略组将游戏、视频和浏览器流量分配到低延迟、高带宽节点，Surfboard 可自动切换最优节点，减少延迟和卡顿，提高整体网络体验和访问速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 的多路复用对短连接有何优势？</h5></div>
     <div class="panel-body">
         多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接应用，如游戏和即时通讯，可提高吞吐量和连接稳定性，优化网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 支持哪些协议？</h5></div>
+    <div class="panel-body">
+        Clash 支持多种主流代理协议，包括 VMess、VLess、Trojan、Shadowsocks、Snell、Socks5 等。通过配置文件或订阅源，用户可以灵活组合不同协议的节点，实现复杂的分流策略与优先级控制。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 项目是什么？</h5></div>
     <div class="panel-body">
-        Matsuri 是基于 sing-box 的跨平台 GUI 客户端，界面现代，支持多种协议和分流方式。它提供直观的节点管理和日志监控功能，适合喜欢图形化操作的用户。Matsuri 的设计目标是简洁、高效、易于上手。    </div>
+        Matsuri 是基于 sing-box 的跨平台 GUI 客户端，界面现代，支持多种协议和分流方式。它提供直观的节点管理和日志监控功能，适合喜欢图形化操作的用户。Matsuri 的设计目标是简洁、高效、易于上手。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 的配置文件在哪里保存？</h5></div>
+    <div class="panel-body">
+        Nekoray 的配置文件默认保存在程序目录下的 `config.json` 中。用户可手动备份此文件以迁移配置，也可使用导入导出功能在不同设备间同步节点数据。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 是否支持多出口自动选择？</h5></div>
+    <div class="panel-body">
+        支持。通过配置路由规则和策略组，Sing-box 可以自动判断流量类型并选择最佳出口，实现智能分流和多节点负载均衡，提高访问效率。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -437,16 +437,16 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-15-node-share-links.htm" title="「11月15日」最高速度22.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月15日」最高速度22.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-18-clash-nyanpasu-node.htm" title="「11月18日」最高速度18.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月18日」最高速度18.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-6-node-share.htm" title="「10月6日」最高速度20.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月6日」最高速度20.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-8-free-high-speed-nodes.htm" title="「10月8日」最高速度18.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月8日」最高速度18.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-4-free-node-subscribe.htm" title="「11月4日」最高速度22.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月4日」最高速度22.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-23-free-subscribe-node.htm" title="「11月23日」最高速度22.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月23日」最高速度22.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-13-clash-nyanpasu-node.htm" title="「11月13日」最高速度18.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月13日」最高速度18.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-25-node-share-links.htm" title="「10月25日」最高速度20.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月25日」最高速度20.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-24-clash-nyanpasu-node.htm" title="「10月24日」最高速度22.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月24日」最高速度22.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-5-clash-nyanpasu.htm" title="「11月5日」最高速度19.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月5日」最高速度19.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-29-clash-nyanpasu-node.htm" title="「11月29日」最高速度22.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月29日」最高速度22.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-4-clash-nyanpasu.htm" title="「12月4日」最高速度22.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「12月4日」最高速度22.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-22-free-clash-nyanpasu.htm" title="「11月22日」最高速度19.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月22日」最高速度19.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-6-node-share.htm" title="「11月6日」最高速度20.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月6日」最高速度20.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-15-node-share-links.htm" title="「11月15日」最高速度22.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月15日」最高速度22.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-7-free-high-speed-nodes.htm" title="「11月7日」最高速度19.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月7日」最高速度19.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-23-free-subscribe-node.htm" title="「11月23日」最高速度22.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月23日」最高速度22.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-27-linux-clash-nyanpasu.htm" title="「11月27日」最高速度20.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月27日」最高速度20.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-21-clash-nyanpasu.htm" title="「11月21日」最高速度21.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月21日」最高速度21.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -458,13 +458,10 @@ A：Clash是策略路由工具，支持多协议与多节点，而Shadowsocks仅
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">10</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
