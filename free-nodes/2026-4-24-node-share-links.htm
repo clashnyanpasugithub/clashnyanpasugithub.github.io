@@ -328,9 +328,24 @@ sudo systemctl start erye-v2ray
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆插件有什么作用？</h5></div>
+    <div class="panel-body">
+        混淆插件用于伪装流量，使其看起来像普通的 HTTP 或 TLS 请求。常见类型有 plain、tls1.2_ticket_auth 等。合理设置混淆能有效降低被识别的风险，提升连接成功率。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + XTLS 如何降低移动网络延迟？</h5></div>
     <div class="panel-body">
         XTLS 通过减少握手次数和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定的移动网络环境中保持连接稳定，提升网页浏览、视频和游戏体验流畅度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess AEAD 加密在安全性方面有何优势？</h5></div>
+    <div class="panel-body">
+        AEAD 加密可防止数据篡改、重放攻击和流量特征泄露。在高封锁环境下保证节点可用，提升数据安全和连接稳定性，同时降低被检测风险，确保长期安全访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 如何按端口分流不同类型流量？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持根据端口匹配流量，将不同应用流量分配到指定节点。结合策略组可实现精准分流，提高访问速度和网络稳定性，优化整体网络体验和管理效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 是否支持多节点测试？</h5></div>
@@ -343,9 +358,9 @@ sudo systemctl start erye-v2ray
         AEAD 加密防止数据篡改、重放攻击和流量特征泄露。在高封锁环境下，保证节点可用，提升数据安全和连接稳定性，降低被检测风险，确保长期安全访问。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆插件有什么作用？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 策略组如何提升游戏和视频体验？</h5></div>
     <div class="panel-body">
-        混淆插件用于伪装流量，使其看起来像普通的 HTTP 或 TLS 请求。常见类型有 plain、tls1.2_ticket_auth 等。合理设置混淆能有效降低被识别的风险，提升连接成功率。<hr />    </div>
+        通过策略组将游戏、视频和浏览器流量分配到低延迟、高带宽节点，Surfboard 可自动切换最优节点，减少延迟和卡顿，提高整体网络体验和访问速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 节点无法连接时应如何排查？</h5></div>
@@ -353,29 +368,14 @@ sudo systemctl start erye-v2ray
         遇到 Trojan 无法连接时，需检查服务器证书是否有效、端口是否开放、密码配置是否匹配。还应确认防火墙未阻断相关端口，并尝试切换 TLS 版本或使用 IP 地址连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 节点分组如何保证低延迟？</h5></div>
-    <div class="panel-body">
-        将节点按延迟、地区或用途分组，并启用策略组，系统会根据节点延迟和健康状态自动选择最佳节点。保证网页浏览、视频播放和游戏流量的低延迟和稳定连接。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 策略组如何提升游戏和视频体验？</h5></div>
-    <div class="panel-body">
-        通过策略组将游戏、视频和浏览器流量分配到低延迟、高带宽节点，Surfboard 可自动切换最优节点，减少延迟和卡顿，提高整体网络体验和访问速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何按端口分流不同类型流量？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持根据端口匹配流量，将不同应用流量分配到指定节点。结合策略组可实现精准分流，提高访问速度和网络稳定性，优化整体网络体验和管理效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密在安全性方面有何优势？</h5></div>
-    <div class="panel-body">
-        AEAD 加密可防止数据篡改、重放攻击和流量特征泄露。在高封锁环境下保证节点可用，提升数据安全和连接稳定性，同时降低被检测风险，确保长期安全访问。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 的节点测速如何优化策略组选择？</h5></div>
     <div class="panel-body">
-        Shadowrocket 会测量节点延迟和丢包率，将低延迟节点优先使用。结合策略组和规则文件，可保证网页、视频和游戏流量走最佳节点，提高访问速度和连接稳定性。    </div>
+        Shadowrocket 会测量节点延迟和丢包率，将低延迟节点优先使用。结合策略组和规则文件，可保证网页、视频和游戏流量走最佳节点，提高访问速度和连接稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 节点分组如何保证低延迟？</h5></div>
+    <div class="panel-body">
+        将节点按延迟、地区或用途分组，并启用策略组，系统会根据节点延迟和健康状态自动选择最佳节点。保证网页浏览、视频播放和游戏流量的低延迟和稳定连接。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -404,16 +404,16 @@ sudo systemctl start erye-v2ray
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-3-16-linux-clash-nyanpasu.htm" title="「3月16日」最高速度20.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「3月16日」最高速度20.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-6-clash-nyanpasu-node.htm" title="「3月6日」最高速度20.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「3月6日」最高速度20.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-29-clash-nyanpasu-node.htm" title="「3月29日」最高速度18.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「3月29日」最高速度18.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-16-clash-nyanpasu-node.htm" title="「4月16日」最高速度18.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「4月16日」最高速度18.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-22-free-node-subscribe-links.htm" title="「4月22日」最高速度21.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「4月22日」最高速度21.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-18-free-clash-nyanpasu.htm" title="「3月18日」最高速度18.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「3月18日」最高速度18.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-22-free-high-speed-nodes.htm" title="「3月22日」最高速度19.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「3月22日」最高速度19.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-30-node-share-links.htm" title="「3月30日」最高速度18.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「3月30日」最高速度18.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-11-node-share-links.htm" title="「5月11日」最高速度20M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「5月11日」最高速度20M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-free-node-subscribe-links.htm" title="「5月6日」最高速度18.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「5月6日」最高速度18.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-7-free-high-speed-nodes.htm" title="「5月7日」最高速度21.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「5月7日」最高速度21.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-26-free-node-subscribe-links.htm" title="「4月26日」最高速度22.5M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「4月26日」最高速度22.5M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-17-linux-clash-nyanpasu.htm" title="「4月17日」最高速度20.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「4月17日」最高速度20.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-28-node-share-links.htm" title="「4月28日」最高速度21.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「4月28日」最高速度21.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-23-linux-clash-nyanpasu.htm" title="「4月23日」最高速度19.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「4月23日」最高速度19.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-8-clash-nyanpasu-node.htm" title="「5月8日」最高速度21.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「5月8日」最高速度21.1M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-25-free-node-subscribe-links.htm" title="「4月25日」最高速度20M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「4月25日」最高速度20M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-25-free-clash-nyanpasu.htm" title="「3月25日」最高速度21.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「3月25日」最高速度21.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-22-free-node-subscribe-links.htm" title="「4月22日」最高速度21.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「4月22日」最高速度21.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -425,10 +425,10 @@ sudo systemctl start erye-v2ray
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
