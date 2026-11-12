@@ -365,29 +365,14 @@ Clash Meta 是基于 Clash 核心的一个增强版，支持更多现代协议�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
+    <div class="panel-body">
+        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的协议参数和混淆参数如何配置最安全？</h5></div>
     <div class="panel-body">
         选择 AEAD 或协议插件可提升安全性，混淆方式如 tls1.2_ticket_auth 可以模拟正常 HTTPS 流量。合理搭配协议和混淆参数，能够有效抵御 DPI 检测和流量封锁。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 的 Web Dashboard 有哪些功能？</h5></div>
-    <div class="panel-body">
-        Mihomo 的 Web 控制面板允许用户可视化管理节点、分流规则、日志查看与系统状态监控。可通过浏览器访问 Dashboard 地址进行远程管理，方便多设备统一控制。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何实现自动节点切换？</h5></div>
-    <div class="panel-body">
-        通过延迟测速和策略组配置，PassWall2 可自动切换到延迟最低的节点。这样用户无需手动操作，即可在访问网页、视频或游戏时保持高速和稳定连接，优化网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 与 Shadowrocket 相比的最大区别是什么？</h5></div>
-    <div class="panel-body">
-        QuantumultX 在规则系统和自动化脚本上更灵活，支持丰富的 rewrite 与 filter 功能，而 Shadowrocket 则更轻便易用，适合普通用户快速切换节点。二者可根据使用习惯与功能需求选择。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 是什么？它与 Shadowsocks 有何不同？</h5></div>
-    <div class="panel-body">
-        SSR（ShadowsocksR）是 Shadowsocks 的增强版本，增加了多种混淆与加密方式，提高了抗封锁能力。与原版相比，SSR 的兼容性更强，但目前已停止维护，许多用户正逐渐迁移到更先进的 V2Ray 或 Trojan 协议上。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 策略组如何优化视频和游戏流量？</h5></div>
@@ -395,14 +380,19 @@ Clash Meta 是基于 Clash 核心的一个增强版，支持更多现代协议�
         Sing-box 可根据策略组和规则文件，将不同应用的流量分配到最佳节点。视频和游戏流量可选择低延迟、高带宽节点，保证流畅播放和操作响应，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何实现自动节点切换？</h5></div>
+    <div class="panel-body">
+        通过延迟测速和策略组配置，PassWall2 可自动切换到延迟最低的节点。这样用户无需手动操作，即可在访问网页、视频或游戏时保持高速和稳定连接，优化网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 是什么？它与 Shadowsocks 有何不同？</h5></div>
+    <div class="panel-body">
+        SSR（ShadowsocksR）是 Shadowsocks 的增强版本，增加了多种混淆与加密方式，提高了抗封锁能力。与原版相比，SSR 的兼容性更强，但目前已停止维护，许多用户正逐渐迁移到更先进的 V2Ray 或 Trojan 协议上。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 如何选择合适混淆提高稳定性？</h5></div>
     <div class="panel-body">
         选择混淆方式时应根据网络环境和封锁程度，例如 tls1.2_ticket_auth 可模拟 HTTPS 流量。合理组合协议和混淆可提升节点稳定性和抗封锁能力，确保长期科学上网体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
-    <div class="panel-body">
-        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 可以管理多少个节点？</h5></div>
@@ -412,7 +402,17 @@ Clash Meta 是基于 Clash 核心的一个增强版，支持更多现代协议�
 <div class="panel panel-default">
     <div class="panel-heading"><h5>当 V2Ray 报错 inbound 没有监听，可能是哪些配置问题？</h5></div>
     <div class="panel-body">
-        检查 inbound 配置是否包含正确的 port、protocol 与 listen 字段；确认没有端口冲突或权限问题（非 root 绑定 1024 以下端口会失败）；查看日志中具体错误信息并根据提示修复配置。    </div>
+        检查 inbound 配置是否包含正确的 port、protocol 与 listen 字段；确认没有端口冲突或权限问题（非 root 绑定 1024 以下端口会失败）；查看日志中具体错误信息并根据提示修复配置。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 与 Shadowrocket 相比的最大区别是什么？</h5></div>
+    <div class="panel-body">
+        QuantumultX 在规则系统和自动化脚本上更灵活，支持丰富的 rewrite 与 filter 功能，而 Shadowrocket 则更轻便易用，适合普通用户快速切换节点。二者可根据使用习惯与功能需求选择。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 的 Web Dashboard 有哪些功能？</h5></div>
+    <div class="panel-body">
+        Mihomo 的 Web 控制面板允许用户可视化管理节点、分流规则、日志查看与系统状态监控。可通过浏览器访问 Dashboard 地址进行远程管理，方便多设备统一控制。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -460,16 +460,16 @@ Clash Meta 是基于 Clash 核心的一个增强版，支持更多现代协议�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-9-20-free-node-subscribe.htm" title="「9月20日」最高速度19.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「9月20日」最高速度19.9M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-10-free-clash-nyanpasu.htm" title="「9月10日」最高速度21.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「9月10日」最高速度21.2M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-26-node-share.htm" title="「10月26日」最高速度22.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月26日」最高速度22.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-28-free-node-subscribe.htm" title="「10月28日」最高速度18.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月28日」最高速度18.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-12-free-clash-nyanpasu.htm" title="「11月12日」最高速度21.8M/S，2026年Clash Nyanpasu免费机场订阅节点链接，2026翻墙机场推荐">「11月12日」最高速度21.8M/S，2026年Clash Nyanpasu免费机场订阅节点链接，2026翻墙机场推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-27.htm" title="「10月27日」最高速度22.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月27日」最高速度22.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-23.htm" title="「10月23日」最高速度22.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月23日」最高速度22.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-29.htm" title="「9月29日」最高速度22.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「9月29日」最高速度22.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-17.htm" title="「10月17日」最高速度19.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月17日」最高速度19.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-16-linux-clash-nyanpasu.htm" title="「9月16日」最高速度19.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「9月16日」最高速度19.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-nyanpasu-2026-10-3.htm" title="「10月3日」最高速度21.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月3日」最高速度21.8M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-22-free-node-subscribe.htm" title="「10月22日」最高速度20.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月22日」最高速度20.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-10-free-clash-nyanpasu.htm" title="「11月10日」最高速度18.5M/S，2026年Clash Nyanpasu免费机场订阅节点链接，2026翻墙机场推荐">「11月10日」最高速度18.5M/S，2026年Clash Nyanpasu免费机场订阅节点链接，2026翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-11-1.htm" title="「11月1日」最高速度19.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「11月1日」最高速度19.3M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-11.htm" title="「10月11日」最高速度22.5M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月11日」最高速度22.5M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-26-node-share.htm" title="「10月26日」最高速度22.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月26日」最高速度22.7M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-10-free-subscribe-node.htm" title="「10月10日」最高速度20.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月10日」最高速度20.6M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-31.htm" title="「10月31日」最高速度22.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐">「10月31日」最高速度22.4M/S，2025年Clash Nyanpasu免费机场订阅节点链接，2025翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-8-free-clash-nyanpasu.htm" title="「11月8日」最高速度21.1M/S，2026年Clash Nyanpasu免费机场订阅节点链接，2026翻墙机场推荐">「11月8日」最高速度21.1M/S，2026年Clash Nyanpasu免费机场订阅节点链接，2026翻墙机场推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -481,13 +481,10 @@ Clash Meta 是基于 Clash 核心的一个增强版，支持更多现代协议�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                     </ul>
     </div>
